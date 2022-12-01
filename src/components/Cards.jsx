@@ -1,10 +1,10 @@
 import Card from "./Card";
+import styles from "./Cards.module.css";
 
 export default function Cards(props) {
-  console.log(props);
   const { characters } = props;
   return (
-    <div>
+    <div className={styles.CardsList}>
       {characters.map((character) => {
         return (
           <Card
