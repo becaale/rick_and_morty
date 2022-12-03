@@ -22,6 +22,14 @@ function App() {
   /* 
   useEffect(() => {}, []); */
 
+  const onClose = (event) => {
+    setCharacters((charsPrev) =>
+      charsPrev.filter(
+        (element) => element.id.toString() !== event.target.id.toString()
+      )
+    );
+  };
+
   const onSearch = (character) => {
     fetch(`https://rickandmortyapi.com/api/character/`)
       .then((response) => response.json())
@@ -64,7 +72,7 @@ function App() {
       </div>
       {/* <hr /> */}
       <div>
-        <Cards characters={characters} />
+        <Cards characters={characters} onClose={onClose} />
       </div>
     </div>
   );
