@@ -10,10 +10,10 @@ export default function Card(props) {
         </button>
       </div>
       <div className={styles.data}>
-          <h2 className={styles.cardTitle}>{props.name}</h2>
-          <p className={styles.cardDescription}>{props.species}</p>
-          <p className={styles.cardDescription}>{props.gender}</p>
-        </div>
+        <h2 className={styles.cardTitle}>{props.name}</h2>
+        <p className={styles.cardDescription}>{props.species}</p>
+        <p className={styles.cardDescription}>{props.gender}</p>
+      </div>
     </div>
   );
 }
