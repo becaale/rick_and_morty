@@ -19,32 +19,40 @@ function App() {
       image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
     },
   ]);
+
+  const [allCharacters, setallCharacters] = useState([
+    {
+      id: 0,
+      name: "",
+      species: "",
+      gender: "",
+      image: "",
+    },
+  ]);
   /* 
   useEffect(() => {}, []); */
 
-  const onClose = (event) => {
-    setCharacters((charsPrev) =>
-      charsPrev.filter(
-        (element) => element.id.toString() !== event.target.id.toString()
-      )
-    );
-  };
-
-  const onSearch = (character) => {
-    fetch(`https://rickandmortyapi.com/api/character/`)
+  const onSearch = (character, url) => {
+    if (!url) {
+      url = `https://rickandmortyapi.com/api/character/`;
+    }
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setCharacters((charsPrev) => {
           return [...charsPrev, ...filterResults(data.results, character)];
         });
+        if (data.info.next) {
+          onSearch(character, data.info.next);
+        }
       });
   };
 
   const filterResults = (results, character) => {
-    let arrResult = [];
-    let arrReturn = [];
-
-    arrResult = [
+    if (character.name.toString().toLowerCase() === "all") {
+      return formatChar(results);
+    }
+    let arrResult = [
       ...results.filter(
         (element) =>
           element.name
@@ -53,16 +61,41 @@ function App() {
             .indexOf(character.name.toString().toLowerCase()) >= 0
       ),
     ];
-    arrResult.map((element) => {
-      arrReturn.push({
-        id: element.id,
-        name: element.name,
-        species: element.species,
-        gender: element.gender,
-        image: element.image,
-      });
+    return formatChar(arrResult);
+  };
+
+  const formatChar = (arr) => {
+    let arrReturn = [];
+    arr.map((element) => {
+      if (checkExist(element)) {
+        arrReturn.push({
+          id: element.id,
+          name: element.name,
+          species: element.species,
+          gender: element.gender,
+          image: element.image,
+        });
+      }
     });
     return arrReturn;
+  };
+
+  const checkExist = (character) => {
+    if (
+      characters.filter((element) => element.id === character.id).length > 0
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  const onClose = (event) => {
+    setCharacters((charsPrev) =>
+      charsPrev.filter(
+        (element) => element.id.toString() !== event.target.id.toString()
+      )
+    );
   };
 
   return (

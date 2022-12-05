@@ -48,6 +48,7 @@ export default function SearchBar(props) {
           onChange={handleSearch}
           onKeyUp={(event) => {
             if (event.key === "Enter") {
+              console.log(event);
               props.onSearch(character);
               borrarSearch();
             }
