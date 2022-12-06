@@ -30,7 +30,7 @@
 }
 
 .card h2 {
-  padding: 0.2rem;
+  padding: 0.1rem;
   margin: 0rem;
   bottom: 100%;
   display: flex;
@@ -71,6 +71,15 @@
 
   background-image: linear-gradient(to top, #0e0b16, #0e0b1669);
 }
+.especs{
+
+  display: flex;
+  flex-direction: row;
+
+  justify-self: flex-end;
+  align-items: flex-end;
+  justify-content: space-around;
+}
 
 .cardBtn {
   padding: 0rem;
@@ -96,3 +105,4 @@
   border: 0.5px solid #0e0b16;
   background: #a239ca;
 }
+

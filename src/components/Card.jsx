@@ -5,14 +5,20 @@ export default function Card(props) {
     <div className={styles.card}>
       <img src={props.image} alt={`img of ${props.name}`} />
       <div className={styles.cont}>
-        <button className={styles.cardBtn} id={props.id} onClick={(event)=>props.onClose(event)}>
+        <button
+          className={styles.cardBtn}
+          id={props.id}
+          onClick={(event) => props.onClose(event)}
+        >
           x
         </button>
       </div>
       <div className={styles.data}>
         <h2 className={styles.cardTitle}>{props.name}</h2>
-        <p className={styles.cardDescription}>{props.species}</p>
-        <p className={styles.cardDescription}>{props.gender}</p>
+        <div className={styles.especs}>
+          <p className={styles.cardDescription}>{props.species}</p>
+          <p className={styles.cardDescription}>{props.gender}</p>
+        </div>
       </div>
     </div>
   );

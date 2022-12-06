@@ -30,15 +30,15 @@ export default function SearchBar(props) {
       image: "",
     });
   };
-
-  return (
-    <div>
-      {/*      <div className={styles.cont}>
+/*      <div className={styles.cont}>
         <input type="search" />
         <button className={styles.btn} onClick={props.onSearch}>
           Agregar
         </button>
-      </div> */}
+      </div> */
+  return (
+    
+      
       <div className={styles.container}>
         <input
           className={styles.input}
@@ -56,6 +56,6 @@ export default function SearchBar(props) {
         />
         <div className={styles.search}></div>
       </div>
-    </div>
+    
   );
 }
