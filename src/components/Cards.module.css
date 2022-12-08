@@ -9,6 +9,8 @@
 .CardsList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 14rem));
-  gap: 2rem;
+  gap: 3rem;
   justify-content: center;
+  padding: 25px;
+  padding-bottom: 100px;
 }

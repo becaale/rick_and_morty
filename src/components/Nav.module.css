@@ -1,27 +1,9 @@
 .navBar {
-  /*   border: 2px;
-  border-color: crimson; */
   display: grid;
-/*   grid-template-columns: repeat(auto-fit, minmax(10rem, 14rem)); */
   grid-template-columns: 400px 1fr 400px;
   gap: 2rem;
   justify-content: center;
 }
-
-/* 
-nav {
-  font-family: 'Raleway', sans-serif;
-  background-image: radial-gradient(circle at center, #899dc4, #495d84);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(ellipse at bottom, #1b2735, #090a0f);
-  font-weight: 300;
-} */
 
 .all {
   margin: 20px;
@@ -106,9 +88,8 @@ nav {
 }
 .center {
   opacity: 1;
-  background-image: url(https://cdn4.iconfinder.com/data/icons/navigation-40/24/hamburger-menu-512.png);
 
-  /*  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/app_window-512.png); */
+  background-image: url(https://cdn4.iconfinder.com/data/icons/modern-technologies-1/32/technology_House_smart_smart_house-512.png);
 }
 .right {
   transform: translateX(30px) translateZ(-25px) rotateY(5deg);
@@ -116,7 +97,7 @@ nav {
 }
 .righter {
   transform: translateX(60px) translateZ(-50px) rotateY(10deg);
-  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/search-512.png);
+  background-image: url(https://cdn0.iconfinder.com/data/icons/news-and-magazine/512/about_us-512.png);
 }
 
 .explainer {
@@ -141,20 +122,3 @@ nav {
   opacity: 1;
   background-image: url(https://cdn4.iconfinder.com/data/icons/navigation-40/24/hamburger-menu-512.png);
 }
-/* .ref {
-  background-color: #000;
-  background-image: linear-gradient(to bottom, #d80, #c00);
-  border-radius: 3px;
-  padding: 7px 10px;
-  position: absolute;
-  font-size: 16px;
-  bottom: 10px;
-  right: 10px;
-  color: #fff;
-  text-decoration: none;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-}
-.ref::first-letter {
-  font-size: 12px;
-}
- */

@@ -1,13 +1,14 @@
 import React from "react";
-import "./App.css";
 import Nav from "./components/Nav.jsx";
-import Card from "./components/Card.jsx";
 import Cards from "./components/Cards.jsx";
-import styles from "./App.module.css";
-import { useState, useEffect } from "react";
-/* import characters, { Rick } from "./data.js";
+import Detail from "./components/Detail.jsx";
+import About from "./components/About.jsx";
 
-let uno = [Rick]; */
+import { useState } from "react";
+/* import { useEffect } from "react"; */
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+/* import Footer from "./components/Footer.jsx"; */
 
 function App() {
   const [characters, setCharacters] = useState([
@@ -20,7 +21,7 @@ function App() {
     },
   ]);
 
-  const [allCharacters, setallCharacters] = useState([
+  /*   const [allCharacters, setallCharacters] = useState([
     {
       id: 0,
       name: "",
@@ -28,7 +29,7 @@ function App() {
       gender: "",
       image: "",
     },
-  ]);
+  ]); */
   /* 
   useEffect(() => {}, []); */
 
@@ -65,19 +66,19 @@ function App() {
   };
 
   const formatChar = (arr) => {
-    let arrReturn = [];
-    arr.map((element) => {
+    return arr.map((element) => {
       if (checkExist(element)) {
-        arrReturn.push({
+        return {
           id: element.id,
           name: element.name,
           species: element.species,
           gender: element.gender,
           image: element.image,
-        });
+        };
+      } else {
+        return null;
       }
     });
-    return arrReturn;
   };
 
   const checkExist = (character) => {
@@ -99,14 +100,17 @@ function App() {
   };
 
   return (
-    <div className="App" style={{ padding: "25px" }}>
-      <div>
-        <Nav onSearch={onSearch} />
-      </div>
-      {/* <hr /> */}
-      <div>
-        <Cards characters={characters} onClose={onClose} />
-      </div>
+    <div className="App">
+      <Nav onSearch={onSearch} />
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+        <Route exact path="/detail/:id" element={<Detail />} />
+        <Route  path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }
