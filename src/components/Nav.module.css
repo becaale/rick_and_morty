@@ -3,6 +3,17 @@
   grid-template-columns: 400px 1fr 400px;
   gap: 2rem;
   justify-content: center;
+  padding-bottom: 5px;
+}
+
+.logo{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1200px-Rick_and_Morty.svg.png?20220319060844);
+  background-position: center right;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+
+
 }
 
 .all {
@@ -80,7 +91,7 @@
 }
 .lefter {
   transform: translateX(-60px) translateZ(-50px) rotateY(-10deg);
-  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/organization-512.png);
+  background-image: url(https://cdn3.iconfinder.com/data/icons/modern-technologies-1/32/Hardware_install_software_repair_overhaul_wrench_cogwheel-512.png);
 }
 .left {
   transform: translateX(-30px) translateZ(-25px) rotateY(-5deg);
@@ -97,7 +108,7 @@
 }
 .righter {
   transform: translateX(60px) translateZ(-50px) rotateY(10deg);
-  background-image: url(https://cdn0.iconfinder.com/data/icons/news-and-magazine/512/about_us-512.png);
+  background-image: url(https://cdn1.iconfinder.com/data/icons/seo-and-web-development-5/32/development_graphism_graphics_art_design-512.png);
 }
 
 .explainer {

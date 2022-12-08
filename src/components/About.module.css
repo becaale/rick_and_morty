@@ -1,0 +1,213 @@
+.containerchar {
+  
+    margin: 30px;
+    width: 100%;
+    max-width: 900px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ff6beb00;
+  
+    border-radius: 20px;
+    box-shadow: 0 0 25px 0 #a239ca, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  }
+  h5 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 14px;
+  }
+  a {
+    text-decoration: none;
+    color: #bbb;
+  }
+  .logo {
+    width: 50%;
+  }
+  .image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #2a778648 0%, #2a7786 100%);
+    border-radius: 20px;
+    padding: 55px 0;
+    width: 100%;
+  }
+  .pic {
+    max-width: 180px;
+    position: relative;
+    left: 0;
+    margin: 40px 0;
+    filter: drop-shadow(-6px 40px 23px rgba(0, 0, 0, 0.5));
+    border-radius: 10px;
+    /*  box-shadow: 0 0 25px 0 #a239ca, 0 20px 25px 0 rgba(0, 0, 0, 0.2); */
+  }
+  .details {
+    padding: 30px;
+    background-color: #12353ee6;
+    border-radius: 0 0 20px 20px;
+    display: grid;
+  }
+  .title {
+    display: flex;
+    justify-self: flex-start;
+    text-transform: uppercase;
+    margin: 5;
+    font-size: 2rem;
+    text-shadow: -5px 5px 7px gray;
+  }
+  .species {
+    text-transform: uppercase;
+    font-style: italic;
+    color: #bbb;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  .banner {
+    font-weight: 700;
+    margin-top: 5px;
+    font-size: 2rem;
+  }
+  .statusdead {
+    color: #851111;
+    margin-left: 6px;
+  }
+  .statusalive {
+    color: #2e9f50;
+    margin-left: 6px;
+  }
+  .details header {
+    margin-bottom: 50px;
+    position: relative;
+  }
+  .details article > h5 {
+    margin: 0;
+  }
+  .details article > p {
+    color: #bbb;
+    margin: 0.5em 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .details .controls {
+    margin: 3em 0;
+  }
+  .details .controls > div {
+    flex: auto;
+  }
+  .details .controls .option {
+    margin-top: 12px;
+    display: inline-block;
+    position: relative;
+  }
+  .details .controls .option:hover {
+    color: rgb(104, 102, 102);
+  }
+  .details .controls .option::gender {
+    content: "";
+    position: absolute;
+    border-width: 2px 2px 0 0;
+    border-style: solid;
+    top: 0;
+    bottom: 0;
+    height: 5px;
+    width: 5px;
+    right: -18px;
+    margin: auto;
+    transform: rotate(135deg);
+  }
+  .details .controls > div + div {
+    margin-top: 20px;
+    flex: auto;
+  }
+  .details .controls ul {
+    display: flex;
+    margin: 15px 5px;
+  }
+  
+  .details .rate {
+    position: static;
+    margin-top: 10px;
+  }
+  .details .rate a {
+    font-size: 18px;
+    color: #bbb;
+  }
+  .details .rate a.active,
+  .details .rate a:hover {
+    color: #878e04;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-end;
+  }
+  .footer > button {
+    display: flex;
+  
+    border: 0;
+    padding: 15px 25px;
+    align-items: center;
+    border-radius: 7px;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #c1e041 0%, #61823f 100%);
+    box-shadow: -5px 5px 7px gray;
+    transition: 200ms;
+  }
+  .footer > button:hover {
+    background: linear-gradient(to bottom, #61823f 0%, #c1e041 100%);
+  }
+  .footer > button > img {
+    width: 31px;
+  }
+  .footer > button > span {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: 10px;
+    color: white;
+  }
+  .footer > a img {
+    width: 24px;
+    opacity: 0.8;
+    justify-self: flex-end;
+  }
+  .footer > a:hover img {
+    opacity: 1;
+  }
+  @media (min-width: 37.5em) {
+    .details .rate {
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      margin-top: 0;
+    }
+    .details .controls > div + div {
+      border-left: 2px solid rgba(187, 187, 187, 0.5);
+      margin-top: 0;
+    }
+    .details .controls {
+      display: flex;
+    }
+  }
+  @media (min-width: 56.25em) {
+    .containerchar {
+      display: flex;
+      flex-direction: row;
+      align-items: normal;
+      margin: auto;
+    }
+    .image {
+      border-radius: 20px 0 0 20px;
+      max-width: 330px;
+    }
+    .pic {
+      left: -40px;
+      max-width: 330px;
+    }
+    .details {
+      width: 100%;
+      border-radius: 0 20px 20px 0;
+    }
+  }
+  

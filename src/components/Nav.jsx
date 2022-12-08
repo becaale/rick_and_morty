@@ -7,10 +7,10 @@ import styles from "./Nav.module.css";
 export default function Nav(props) {
   return (
     <div className={styles.navBar}>
-      <div></div>
+      <div className={styles.logo}></div>
       <div className={styles.all}>
         <div className={styles.lefter}>
-          <Link to={"/test"}>
+          <Link to={"/login"}>
           <div className={styles.explainer}>{/* <span>=</span> */}</div>
             <div className={styles.text}></div>
           </Link>

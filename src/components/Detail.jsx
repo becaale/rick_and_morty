@@ -19,7 +19,7 @@ export default function Detail(props) {
       image: "",
     },
   ]);
-  const goToHome = (id) => {
+  const goToHome = () => {
     navigate(`/`);
   };
   useEffect(() => {
@@ -47,6 +47,7 @@ export default function Detail(props) {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1200px-Rick_and_Morty.svg.png"
           alt=""
           className={styles.logo}
+          onClick={goToHome}
         />
         <img src={character.image} alt="" className={styles.pic} />
       </div>

@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+/* import { useEffect } from "react"; */
+import { Routes, Route, useLocation } from "react-router-dom";
+
+import FormLogin from "./components/FormLogin.jsx";
 import Nav from "./components/Nav.jsx";
 import Cards from "./components/Cards.jsx";
 import Detail from "./components/Detail.jsx";
 import About from "./components/About.jsx";
-
-import { useState } from "react";
-/* import { useEffect } from "react"; */
-import { Routes, Route } from "react-router-dom";
-import "./App.css";
 /* import Footer from "./components/Footer.jsx"; */
 
+import "./App.css";
+
 function App() {
+  let location = useLocation();
+
   const [characters, setCharacters] = useState([
     {
       id: 0,
@@ -32,7 +35,6 @@ function App() {
   ]); */
   /* 
   useEffect(() => {}, []); */
-
   const onSearch = (character, url) => {
     if (!url) {
       url = `https://rickandmortyapi.com/api/character/`;
@@ -101,7 +103,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav onSearch={onSearch} />
+      {location.pathname !== "/login" ? <Nav onSearch={onSearch} /> : null}
       <Routes>
         <Route
           exact
@@ -109,7 +111,8 @@ function App() {
           element={<Cards characters={characters} onClose={onClose} />}
         />
         <Route exact path="/detail/:id" element={<Detail />} />
-        <Route  path="/about" element={<About />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<FormLogin />} />
       </Routes>
     </div>
   );
