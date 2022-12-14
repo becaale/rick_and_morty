@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-/* import { useEffect } from "react"; */
-import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 import FormLogin from "./components/FormLogin.jsx";
+import Form from "./components/Form.jsx";
+import Favorites from "./components/Favorites.jsx";
 import Nav from "./components/Nav.jsx";
 import Cards from "./components/Cards.jsx";
 import Detail from "./components/Detail.jsx";
 import About from "./components/About.jsx";
+import Error from "./components/Error.jsx";
 /* import Footer from "./components/Footer.jsx"; */
 
 import "./App.css";
 
 function App() {
   let location = useLocation();
+  const navigate = useNavigate();
 
   const [characters, setCharacters] = useState([
     {
@@ -33,8 +37,26 @@ function App() {
       image: "",
     },
   ]); */
-  /* 
-  useEffect(() => {}, []); */
+
+  const [access, setAccess] = useState(true);
+  const username = "ejemplo@gmail.com";
+  const password = "1password";
+
+  function login(userData) {
+    if (userData.password === password && userData.username === username) {
+      setAccess(true);
+      navigate("/");
+    }
+  }
+  function logout() {
+    setAccess(false);
+    navigate("/loguin");
+  }
+
+  useEffect(() => {
+    !access && navigate("/login");
+  }, [access]);
+
   const onSearch = (character, url) => {
     if (!url) {
       url = `https://rickandmortyapi.com/api/character/`;
@@ -57,11 +79,7 @@ function App() {
     }
     let arrResult = [
       ...results.filter(
-        (element) =>
-          element.name
-            .toString()
-            .toLowerCase()
-            .indexOf(character.name.toString().toLowerCase()) >= 0
+        (element) => element.name.toString().toLowerCase().indexOf(character.name.toString().toLowerCase()) >= 0
       ),
     ];
     return formatChar(arrResult);
@@ -84,9 +102,7 @@ function App() {
   };
 
   const checkExist = (character) => {
-    if (
-      characters.filter((element) => element.id === character.id).length > 0
-    ) {
+    if (characters.filter((element) => element.id === character.id).length > 0) {
       return false;
     } else {
       return true;
@@ -94,25 +110,20 @@ function App() {
   };
 
   const onClose = (event) => {
-    setCharacters((charsPrev) =>
-      charsPrev.filter(
-        (element) => element.id.toString() !== event.target.id.toString()
-      )
-    );
+    setCharacters((charsPrev) => charsPrev.filter((element) => element.id.toString() !== event.target.id.toString()));
   };
 
   return (
     <div className="App">
-      {location.pathname !== "/login" ? <Nav onSearch={onSearch} /> : null}
+      {location.pathname !== "/login" ? <Nav logout={logout} onSearch={onSearch} /> : null}
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={<Cards characters={characters} onClose={onClose} />}
-        />
-        <Route exact path="/detail/:id" element={<Detail />} />
+        <Route path="/login" element={<FormLogin login={login} />} />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<FormLogin />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/favorites" element={<Favorites characters={characters} />} />
+        <Route exact path="/detail/:id" element={<Detail />} />
+        <Route exact path="/" element={<Cards characters={characters} onClose={onClose} />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );

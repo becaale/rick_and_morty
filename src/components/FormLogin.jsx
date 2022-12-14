@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { validate } from "./Validation";
 import styles from "./FormLogin.module.css";
 
-export default function FormLogin() {
+export default function FormLogin(props) {
   const [userData, setUserData] = useState({ username: "", password: "" });
 
   const [errors, setErrors] = useState({ username: "", password: "" });
@@ -19,6 +19,10 @@ export default function FormLogin() {
         [property]: value,
       })
     );
+  };
+  
+  const handleSubmit = (event) => {
+    props.login(userData);
   };
 
   return (
@@ -46,6 +50,7 @@ export default function FormLogin() {
           />
           <p className="error">{errors.password}</p>
         </div>
+        <button onClick={handleSubmit}>Login</button>
       </div>
     </div>
   );

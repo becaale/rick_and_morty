@@ -103,7 +103,10 @@ export default function About(props) {
           <h5>{character.type ? "Descripcion" : ""}</h5>
           <p>{character.type}</p>
         </article>
-        <div className={styles.controls}>
+        <article>
+          <h5>{character.type ? "Proyectos" : ""}</h5>
+          <p>{character.type}</p>
+        </article>        <div className={styles.controls}>
           <div>
             <h5>Origin</h5>
             <a

@@ -6,14 +6,11 @@
   padding-bottom: 5px;
 }
 
-.logo{
+.logo {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1200px-Rick_and_Morty.svg.png?20220319060844);
   background-position: center right;
   background-size: contain;
   background-repeat: no-repeat;
-
-
-
 }
 
 .all {
@@ -35,7 +32,7 @@
   transform: perspective(10000px) rotateX(0deg);
 }
 .all:hover .text {
-  opacity: 1;
+  opacity: 0;
 }
 .all:hover > div {
   opacity: 1;
@@ -49,7 +46,9 @@
 .center,
 .right,
 .lefter,
-.righter {
+.lefterx,
+.righter,
+.righterx {
   width: 75px;
   height: 50px;
   transform-style: preserve-3d;
@@ -73,44 +72,75 @@
 .center:hover,
 .right:hover,
 .lefter:hover,
-.righter:hover {
+.lefterx:hover,
+.righter:hover,
+.righterx:hover {
   box-shadow: 0 0 30px 10px rgba(100, 100, 255, 0.6);
   background-color: #ccf;
+}
+.lefterx:hover .text {
+  opacity: 1;
+}
+.lefter:hover .text {
+  opacity: 1;
+}
+.left:hover .text {
+  opacity: 1;
+}
+.center:hover .text {
+  opacity: 1;
+}
+.right:hover .text {
+  opacity: 1;
+}
+.righter:hover .text {
+  opacity: 1;
+}
+.righterx:hover .text {
+  opacity: 1;
 }
 
 .text {
   transform: translateY(30px);
-  opacity: 1;
+  justify-self: center;
+  opacity: 0;
   transition: all 0.3s ease;
   bottom: 0;
-  left: 5px;
+  left: 10px;
   position: absolute;
   will-change: transform;
   color: #fff;
   text-shadow: 0 0 5px rgba(6, 6, 6, 0.6);
 }
-.lefter {
+/* https://cdn4.iconfinder.com/data/icons/ocd-obsessive-compulsive-disorder-intrusive-though/182/intrusive-thought-ocd-obsessive-compulsive-disorder-6-512.png */
+.lefterx {
   transform: translateX(-60px) translateZ(-50px) rotateY(-10deg);
-  background-image: url(https://cdn3.iconfinder.com/data/icons/modern-technologies-1/32/Hardware_install_software_repair_overhaul_wrench_cogwheel-512.png);
+  background-image: url(https://cdn2.iconfinder.com/data/icons/medicine-and-medical-diagnostics-1/32/Medicine_drug_medication_pills_tablets-512.png);
+}
+.lefter {
+  transform: translateX(-40px) translateZ(-30px) rotateY(-10deg);
+  background-image: url(https://cdn4.iconfinder.com/data/icons/market-research-2/128/sampling-market-research-marketing-sample-random-user-512.png);
 }
 .left {
-  transform: translateX(-30px) translateZ(-25px) rotateY(-5deg);
-  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/creative_draw-512.png);
+  transform: translateX(-20px) translateZ(-15px) rotateY(-5deg);
+  background-image: url(https://cdn4.iconfinder.com/data/icons/modern-technologies-1/32/technology_Face_face_recognition_man_recognition-512.png);
 }
 .center {
   opacity: 1;
-
   background-image: url(https://cdn4.iconfinder.com/data/icons/modern-technologies-1/32/technology_House_smart_smart_house-512.png);
 }
 .right {
-  transform: translateX(30px) translateZ(-25px) rotateY(5deg);
-  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/cloud_weather-512.png);
+  transform: translateX(20px) translateZ(-15px) rotateY(5deg);
+  background-image: url(https://cdn3.iconfinder.com/data/icons/modern-technologies-1/32/Hardware_install_software_repair_overhaul_wrench_cogwheel-512.png);
 }
 .righter {
-  transform: translateX(60px) translateZ(-50px) rotateY(10deg);
+  transform: translateX(40px) translateZ(-30px) rotateY(10deg);
   background-image: url(https://cdn1.iconfinder.com/data/icons/seo-and-web-development-5/32/development_graphism_graphics_art_design-512.png);
 }
-
+.righterx {
+  transform: translateX(60px) translateZ(-50px) rotateY(10deg);
+  background-image: url(https://cdn4.iconfinder.com/data/icons/modern-technologies-1/32/technology_Crypto_cryptography_digital_key_public_signature_digital_key-512.png);
+}
 .explainer {
   font-weight: 300;
   font-size: 2rem;
@@ -122,9 +152,6 @@
   background-image: radial-gradient(circle at center top, #d392ec, #a239ca);
   border-radius: 10px;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   position: relative;
   background-position: center center;
