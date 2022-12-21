@@ -29,10 +29,10 @@ function Favorites({ characters, myFavorites, onClose, orderCards, filterCards }
     <>
       <div className={styles.filters}>
         <select name="Order" id="" onChange={handleChange}>
-          <option value="ASCENDENTEID">{'ID >'}</option>
-          <option value="DESCENDENTEID">{'ID <'}</option>
-          <option value="ASCENDENTEN">{'Nombre >'}</option>
-          <option value="DESCENDENTEN">{'Nombre <'}</option>
+          <option value="ASCENDENTEID">{"ID >"}</option>
+          <option value="DESCENDENTEID">{"ID <"}</option>
+          <option value="ASCENDENTEN">{"Nombre >"}</option>
+          <option value="DESCENDENTEN">{"Nombre <"}</option>
         </select>
         <select name="Filter" id="" onChange={handleChange}>
           <option value="ALL">All</option>
@@ -44,7 +44,7 @@ function Favorites({ characters, myFavorites, onClose, orderCards, filterCards }
       </div>
 
       <div className={styles.CardsList}>
-        {characters?.forEach((character) => {
+        {characters?.map((character) => {
           if (myFavorites?.filter((fav) => fav === character.id).length > 0) {
             return (
               <div key={character.id}>
@@ -60,6 +60,7 @@ function Favorites({ characters, myFavorites, onClose, orderCards, filterCards }
               </div>
             );
           }
+          return null;
         })}
       </div>
     </>

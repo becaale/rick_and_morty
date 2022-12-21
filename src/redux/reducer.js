@@ -101,6 +101,7 @@ const rootReducer = (state = initialState, action) => {
               }
               return 0;
             }
+            return 0;
           }),
         ],
       };
