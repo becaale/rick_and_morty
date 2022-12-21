@@ -1,5 +1,4 @@
 .containerchar {
-  
   margin: 30px;
   width: 100%;
   max-width: 900px;
@@ -21,6 +20,7 @@ a {
   color: #bbb;
 }
 .logo {
+  cursor: pointer;
   width: 50%;
 }
 .image {

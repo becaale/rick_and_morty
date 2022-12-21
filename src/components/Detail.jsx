@@ -4,7 +4,7 @@ import { Navigate, useParams } from "react-router-dom";
 import styles from "./Detail.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Detail(props) {
+export default function Detail({ onClose }) {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -60,13 +60,7 @@ export default function Detail(props) {
             <span className={styles.gender}>{character.gender}</span>
           </div>
           <div className={styles.banner}>
-            <span
-              className={
-                character.status === "Alive"
-                  ? styles.statusalive
-                  : styles.statusdead
-              }
-            >
+            <span className={character.status === "Alive" ? styles.statusalive : styles.statusdead}>
               {character.status}
             </span>
           </div>
@@ -102,25 +96,22 @@ export default function Detail(props) {
             </a>
           </div>
           <div>
-            <h5>Episodios</h5>
+            <h5>    Episodios</h5>
             <a href="#!" className={styles.option}>
               {character.episode?.length}
             </a>
           </div>
         </div>
         <div className={styles.footer}>
-          <button type="button">
-            <img
+          <button id={id} type="button" onClick={onClose}>
+            <img onClick={onClose}
               src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_delete_48px-512.png"
               alt=""
             />
-            <span>Eliminar</span>
+            <span id={id} onClick={onClose}>Eliminar</span>
           </button>
           <a href="#!">
-            <img
-              src="http://co0kie.github.io/codepen/nike-product-page/share.png"
-              alt=""
-            />
+            <img id={id} src="http://co0kie.github.io/codepen/nike-product-page/share.png" alt="" />
           </a>
         </div>
       </div>

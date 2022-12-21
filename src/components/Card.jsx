@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, connect } from "react-redux";
+import { connect } from "react-redux";
 
 import { addFavorite, deleteFavorite } from "../redux/actions";
 import styles from "./Card.module.css";
 
 function Card({ id, name, species, gender, image, onClose, goToDetail, addFavorite, deleteFavorite, myFavorites }) {
   const [isFav, setIsFav] = useState(false);
-  const dispatch = useDispatch();
 
   const handleFavorite = () => {
     if (isFav) {
       setIsFav(false);
-      dispatch(deleteFavorite(id));
+      deleteFavorite(id);
     } else {
       setIsFav(true);
-      dispatch(addFavorite(id));
+      addFavorite(id);
     }
   };
 

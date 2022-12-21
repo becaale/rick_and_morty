@@ -1,11 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import Card from "./Card";
 import styles from "./Cards.module.css";
 
-export default function Cards(props) {
-  const { characters } = props;
+function Cards({ characters, onClose }) {
   const navigate = useNavigate();
   const goToDetail = (id) => {
     navigate(`/detail/${id}`);
@@ -21,7 +21,7 @@ export default function Cards(props) {
               species={character.species}
               gender={character.gender}
               image={character.image}
-              onClose={props.onClose}
+              onClose={onClose}
               goToDetail={goToDetail}
             />
           </div>
@@ -30,3 +30,11 @@ export default function Cards(props) {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    characters: state.characters,
+  };
+};
+
+export default connect(mapStateToProps, null)(Cards);
