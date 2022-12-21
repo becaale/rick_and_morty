@@ -42,7 +42,7 @@ export default function App() {
   useEffect(() => {
     !access && navigate("/login");
     if (stateCharacters.length === 0) dispatch(getAllCharacters());
-  }, [stateCharacters, access]);
+  }, [stateCharacters, access, navigate, dispatch]);
 
   const onSearch = (character) => {
     dispatch(searchCharacter(character));

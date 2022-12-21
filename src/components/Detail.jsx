@@ -38,7 +38,7 @@ export default function Detail({ onClose }) {
         goToHome();
       });
     return setCharacter({});
-  }, [id, goToHome]);
+  }, [id]);
 
   return (
     <div className={styles.containerchar}>
