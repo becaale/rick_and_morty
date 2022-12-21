@@ -44,7 +44,7 @@ function Favorites({ characters, myFavorites, onClose, orderCards, filterCards }
       </div>
 
       <div className={styles.CardsList}>
-        {characters?.map((character) => {
+        {characters?.forEach((character) => {
           if (myFavorites?.filter((fav) => fav === character.id).length > 0) {
             return (
               <div key={character.id}>

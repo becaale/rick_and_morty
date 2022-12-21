@@ -19,7 +19,7 @@ function Card({ id, name, species, gender, image, onClose, goToDetail, addFavori
 
   useEffect(() => {
     if (myFavorites?.filter((fav) => fav === id).length > 0) setIsFav(true);
-  }, [myFavorites]);
+  }, [myFavorites,id]);
 
   return (
     <div className={styles.card}>

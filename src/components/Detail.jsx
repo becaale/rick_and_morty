@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from "./Detail.module.css";
 import { useNavigate } from "react-router-dom";
 
@@ -38,7 +38,7 @@ export default function Detail({ onClose }) {
         goToHome();
       });
     return setCharacter({});
-  }, [id]);
+  }, [id, goToHome]);
 
   return (
     <div className={styles.containerchar}>
@@ -104,11 +104,14 @@ export default function Detail({ onClose }) {
         </div>
         <div className={styles.footer}>
           <button id={id} type="button" onClick={onClose}>
-            <img onClick={onClose}
+            <img
+              onClick={onClose}
               src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_delete_48px-512.png"
               alt=""
             />
-            <span id={id} onClick={onClose}>Eliminar</span>
+            <span id={id} onClick={onClose}>
+              Eliminar
+            </span>
           </button>
           <a href="#!">
             <img id={id} src="http://co0kie.github.io/codepen/nike-product-page/share.png" alt="" />

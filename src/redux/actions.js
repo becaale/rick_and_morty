@@ -85,7 +85,7 @@ export const orderCards = (order) => {
   };
 };
 
-const rmCharDupli = (arr) => {
+/* const rmCharDupli = (arr) => {
   let arrReturn = [];
   let uniq = {};
   for (const element of arr) {
@@ -95,9 +95,9 @@ const rmCharDupli = (arr) => {
     }
   }
   return arrReturn;
-};
+}; */
 
-const filterResults = (results, character) => {
+/* const filterResults = (results, character) => {
   if (character.name.toString().toLowerCase() === "all") {
     return formatChar(results);
   }
@@ -107,7 +107,7 @@ const filterResults = (results, character) => {
     ),
   ];
   return formatChar(arrResult);
-};
+}; */
 
 const formatChar = (arr) => {
   return arr.map((element) => {

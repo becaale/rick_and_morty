@@ -1,9 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
 import styles from "./About.module.css";
 import { useNavigate } from "react-router-dom";
-import { Component } from "react";
 
 export default function About(props) {
   const navigate = useNavigate();
@@ -71,13 +68,7 @@ export default function About(props) {
             <span className={styles.gender}>{character.gender}</span>
           </div>
           <div className={styles.banner}>
-            <span
-              className={
-                character.status === "Alive"
-                  ? styles.statusalive
-                  : styles.statusdead
-              }
-            >
+            <span className={character.status === "Alive" ? styles.statusalive : styles.statusdead}>
               {character.status}
             </span>
           </div>
@@ -106,22 +97,17 @@ export default function About(props) {
         <article>
           <h5>{character.type ? "Proyectos" : ""}</h5>
           <p>{character.type}</p>
-        </article>        <div className={styles.controls}>
+        </article>{" "}
+        <div className={styles.controls}>
           <div>
             <h5>Origin</h5>
-            <a
-              href="https://goo.gl/maps/oTLYkfrxhCK9ayFe8"
-              className={styles.option}
-            >
+            <a href="https://goo.gl/maps/oTLYkfrxhCK9ayFe8" className={styles.option}>
               {character.origin}
             </a>
           </div>
           <div>
             <h5>Location</h5>
-            <a
-              href="https://goo.gl/maps/yNoUk8yBneXUUPRT6"
-              className={styles.option}
-            >
+            <a href="https://goo.gl/maps/yNoUk8yBneXUUPRT6" className={styles.option}>
               {character.location}
             </a>
           </div>
