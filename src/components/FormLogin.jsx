@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { validate } from "./Validation";
 import styles from "./FormLogin.module.css";
 
 export default function FormLogin(props) {
   const [userData, setUserData] = useState({ username: "", password: "" });
-
   const [errors, setErrors] = useState({ username: "", password: "" });
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const property = event.target.name;
@@ -32,45 +33,16 @@ export default function FormLogin(props) {
   };
 
   const handleSubmit = (event) => {
-    props.login(userData);
+    event.preventDefault();
+    if (props.login(userData)) {
+      navigate("/");
+    } else {
+      alert("usuario o contraseña inconrrecta");
+    }
   };
 
   return (
     <>
-      {/* <div className={styles.container}>
-        <div className={styles.form}>
-          <div>
-            <label htmlFor="username">Usuario: </label>
-            <input
-              name="username"
-              type="text"
-              placeholder="Mail..."
-              value={userData.username}
-              onChange={handleChange}
-            />
-            <p className="error">{errors.username}</p>
-          </div>
-          <div>
-            <label htmlFor="password">Contraseña: </label>
-            <input
-              name="password"
-              type="text"
-              placeholder="Password..."
-              value={userData.password}
-              onChange={handleChange}
-            />
-            <p className="error">{errors.password}</p>
-          </div>
-          <button onClick={handleSubmit}>Login</button>
-        </div>
-      </div> */}
-
-      {/*  <div id="loginbutton">
-        <img src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png"></img>
-      </div> */}
-      {/* <div id="loginbutton" className={styles.loginbutton}>
-        <img src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png"></img>
-      </div> */}
       <div id="logincontainer" className={styles.container}>
         <h1 className={styles.h1}>Log In</h1>
 
@@ -83,6 +55,10 @@ export default function FormLogin(props) {
             value={userData.username}
             onChange={handleChange}
           />
+          <p className={styles.error}>
+            {" "}
+            {errors.username}
+          </p>
           <input
             className={styles.input}
             type="password"
@@ -91,7 +67,11 @@ export default function FormLogin(props) {
             value={userData.password}
             onChange={handleChange}
           />
-          <button className={styles.button} onClick={handleSubmit}>
+          <p className={styles.error}>
+            {" "}
+            {errors.password}
+          </p>
+          <button name="btnLogin" className={styles.button} onClick={handleSubmit}>
             Login
           </button>
 
@@ -108,20 +88,29 @@ export default function FormLogin(props) {
       </div>
 
       <div id="forgottencontainer" className={styles.forgottencontainer}>
-      <h1 className={styles.h1}>Forgotten</h1>
+        <h1 className={styles.h1}>Forgotten</h1>
 
-      <span className={styles.closebtn} onClick={closeResetpass}>
+        <span className={styles.closebtn} onClick={closeResetpass}>
           <img
             className={styles.img}
             src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"
           ></img>
         </span>
 
-
-
         <form>
-          <input type="email" name="username" placeholder="E-mail..." className={styles.input} />
-          <button className={styles.button} onClick={handleSubmit}>
+          <input
+            type="email"
+            name="username"
+            placeholder="E-mail..."
+            className={styles.input}
+            value={userData.username}
+            onChange={handleChange}
+          />
+          <p className={styles.error}>
+            {" "}
+            {errors.username}
+          </p>
+          <button name="btnForgot" className={styles.button} onClick={handleSubmit}>
             Get new password
           </button>
         </form>

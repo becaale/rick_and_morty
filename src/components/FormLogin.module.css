@@ -43,8 +43,8 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 260px;
-  height: 260px;
+  width: 300px;
+  height: 280px;
   border-radius: 5px;
   background: rgba(3, 3, 3, 0.467);
   box-shadow: 1px 1px 50px #000;
@@ -78,13 +78,22 @@
 .h1 {
   font-family: "Open Sans Condensed", sans-serif;
   position: relative;
-  margin-top: 0px;
+  margin-top: 5px;
   text-align: center;
   font-size: 40px;
   color: #2a7786;
   text-shadow: 3px 3px 10px #000;
 }
 
+.error {
+   position: relative;
+  margin-top: 0px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: #e40909;
+  text-shadow: 3px 3px 10px #000;
+}
 /* Inputs */
 .button,
 .input {
@@ -215,8 +224,8 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 260px;
-  height: 180px;
+  width: 290px;
+  height: 190px;
   border-radius: 10px;
   background: rgba(3, 3, 3, 0.5);
   box-shadow: 0 2px 20px #a239ca;

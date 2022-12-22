@@ -31,7 +31,9 @@ export default function App() {
   function login(userData) {
     if (userData.password === password && userData.username === username) {
       setAccess(true);
-      navigate("/");
+      return true;
+    } else {
+      return false;
     }
   }
   function logout() {

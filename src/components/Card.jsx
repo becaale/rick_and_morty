@@ -19,7 +19,7 @@ function Card({ id, name, species, gender, image, onClose, goToDetail, addFavori
 
   useEffect(() => {
     if (myFavorites?.filter((fav) => fav === id).length > 0) setIsFav(true);
-  }, [myFavorites,id]);
+  }, [myFavorites, id]);
 
   return (
     <div className={styles.card}>
@@ -34,9 +34,14 @@ function Card({ id, name, species, gender, image, onClose, goToDetail, addFavori
             🤍
           </button>
         )}
-        <button className={styles.cardBtn} id={id} onClick={(event) => onClose(event)}>
-          x
-        </button>
+        <span className={styles.closebtn}>
+          <img
+            id={id}
+            onClick={(event) => onClose(event)}
+            className={styles.img}
+            src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"
+          ></img>
+        </span>
       </div>
       <div className={styles.data}>
         <h2 className={styles.cardTitle} onClick={() => goToDetail(id)}>

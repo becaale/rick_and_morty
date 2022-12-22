@@ -82,28 +82,28 @@
   justify-content: space-around;
 }
 
-.cardBtn {
-  padding: 0rem;
-  width: 7%;
-  align-self: flex-start;
 
-  font-family: inherit;
-  font-weight: 600;
-  color: #a239ca;
-  background: #0e0b16;
-  /*  background: transparent; */
-
-  border: 0.5px solid #a239ca;
-  border-radius: 0.2rem;
-
-  transition: background 200ms ease-in, color 200ms ease-in;
+.closebtn {
+  position: absolute;
+  cursor: pointer;
+  font-family: "Open Sans Condensed", sans-serif;
+  line-height: 18px;
+  top: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0.4;
+  background-color: #d00404;
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.cardBtn:hover {
-  color: #0e0b16;
-  font-weight: 700;
-  border: 0.5px solid #0e0b16;
-  background: #a239ca;
+.closebtn:hover {
+  opacity: 0.7;
 }
 
 .cardBtnFav {
