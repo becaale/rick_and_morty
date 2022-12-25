@@ -90,7 +90,7 @@ export default function Detail({ onClose }) {
             </a>
           </div>
           <div>
-            <h5>Location</h5>
+            <h5>Last known location</h5>
             <a href="#!" className={styles.option}>
               {character.location?.name}
             </a>

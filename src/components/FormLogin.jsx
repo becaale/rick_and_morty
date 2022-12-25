@@ -34,10 +34,14 @@ export default function FormLogin(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (props.login(userData)) {
-      navigate("/");
-    } else {
-      alert("usuario o contraseña inconrrecta");
+    console.log(!errors.password);
+    console.log(!errors.username);
+    if (!errors.password && !errors.username) {
+      if (props.login(userData)) {
+        navigate("/");
+      } else {
+        alert("usuario o contraseña inconrrecta");
+      }
     }
   };
 

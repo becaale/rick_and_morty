@@ -106,7 +106,7 @@ export default function About(props) {
             </a>
           </div>
           <div>
-            <h5>Location</h5>
+            <h5>LAST KNOWN LOCATION</h5>
             <a href="https://goo.gl/maps/yNoUk8yBneXUUPRT6" className={styles.option}>
               {character.location}
             </a>

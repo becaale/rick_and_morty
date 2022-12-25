@@ -13,7 +13,7 @@
   justify-content: flex-end;
 }
 
-select {
+.select {
   margin-right: 10px;
   appearance: none;
   border: 0;
@@ -31,17 +31,17 @@ select {
   cursor: pointer;
 }
 
-select option {
+.select .option {
   color: inherit;
   background-color: #320a28;
   border-radius: 0.25em;
   box-shadow: 0 2px 20px #a239ca;
 }
 
-select:focus {
+.select:focus {
   outline: none;
 }
 
-select::-ms-expand {
+.select::-ms-expand {
   display: none;
 }

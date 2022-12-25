@@ -28,18 +28,36 @@ function Favorites({ characters, myFavorites, onClose, orderCards, filterCards }
   return (
     <>
       <div className={styles.filters}>
-        <select name="Order" id="" onChange={handleChange}>
-          <option value="ASCENDENTEID">{"ID >"}</option>
-          <option value="DESCENDENTEID">{"ID <"}</option>
-          <option value="ASCENDENTEN">{"Nombre >"}</option>
-          <option value="DESCENDENTEN">{"Nombre <"}</option>
+        <select className={styles.select} name="Order" id="" onChange={handleChange}>
+          <option className={styles.option} value="ASCENDENTEID">
+            {"ID >"}
+          </option>
+          <option className={styles.option} value="DESCENDENTEID">
+            {"ID <"}
+          </option>
+          <option className={styles.option} value="ASCENDENTEN">
+            {"Nombre >"}
+          </option>
+          <option className={styles.option} value="DESCENDENTEN">
+            {"Nombre <"}
+          </option>
         </select>
-        <select name="Filter" id="" onChange={handleChange}>
-          <option value="ALL">All</option>
-          <option value="MALE">Male</option>
-          <option value="FEMALE">Female</option>
-          <option value="GENDERLESS">Genderless</option>
-          <option value="UNKNOWN">Unknown</option>
+        <select className={styles.select} name="Filter" id="" onChange={handleChange}>
+          <option className={styles.option} value="ALL">
+            All
+          </option>
+          <option className={styles.option} value="MALE">
+            Male
+          </option>
+          <option className={styles.option} value="FEMALE">
+            Female
+          </option>
+          <option className={styles.option} value="GENDERLESS">
+            Genderless
+          </option>
+          <option className={styles.option} value="UNKNOWN">
+            Unknown
+          </option>
         </select>
       </div>
 

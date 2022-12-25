@@ -1,0 +1,208 @@
+/*  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+ * {
+	 box-sizing: border-box;
+	 margin: 0;
+	 padding: 0;
+} 
+  body {
+	 align-items: center;
+	 background: #d8aa96;
+	 color: rgba(0, 0, 0, .8);
+	 display: grid;
+	 font-family: 'Montserrat', sans-serif;
+	 font-size: 14px;
+	 font-weight: 400;
+	 height: 100vh;
+	 justify-items: center;
+	 weight: 100vw;
+}  */
+.createcontainer {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+}
+.leftcontainer {
+  border-radius: 5% 0% 0% 5%;
+  background: #2a7786;
+  overflow: hidden;
+  padding: 40px 0 0 0;
+  position: relative;
+  text-align: center;
+  width: 300px;
+}
+.leftcontainer h1 {
+  color: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  font-size: 24px;
+}
+.leftcontainer h1 i {
+  background: #61823f;
+  border-radius: 50%;
+  color: #2a7786;
+  font-size: 24px;
+  margin-right: 5px;
+  padding: 10px;
+  transform: rotate(-45deg);
+}
+.leftcontainer .img {
+  bottom: 30%;
+  position: absolute;
+  text-align: center;
+}
+.leftcontainer .img:before {
+  background: #2a7786;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.4;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.leftcontainer .imagen {
+  border-radius: 5%;
+  filter: sepia(100%);
+  width: 70%;
+}
+.rightcontainer {
+	border-radius: 0% 5% 5% 0%;
+  background: #6e9347;
+  display: grid;
+  grid-template-areas: "." ".";
+  width: 500px;
+}
+.rightcontainer h1:nth-of-type(1) {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 28px;
+  font-weight: 600;
+}
+.rightcontainer .set {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.rightcontainer input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+  background-color: #86bbae;
+}
+.rightcontainer input,
+.rightcontainer label {
+  color: rgba(0, 0, 0, 0.8);
+}
+.rightcontainer header {
+  padding: 20px;
+  padding-top: 5px;
+}
+.rightcontainer label,
+.rightcontainer input,
+.rightcontainer .charphoto {
+  width: 176px;
+}
+.rightcontainer .charphoto {
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-areas: ". .";
+}
+.rightcontainer .charphoto button {
+  border: none;
+  border-radius: 50%;
+  height: 38px;
+  margin-right: 10px;
+  outline: none;
+  width: 38px;
+}
+.rightcontainer .charphoto button {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+  background-color: #86bbae;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(https://cdn0.iconfinder.com/data/icons/logos-21/40/Instagram-512.png);
+}
+.rightcontainer .chargender .radiocontainer .selectcontainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.rightcontainer footer {
+  align-items: center;
+  background: #86bbae;
+  display: grid;
+  padding: 5px 40px;
+  border-radius: 0% 0% 5% 0%;
+}
+.rightcontainer footer button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: "Montserrat", sans-serif;
+}
+.rightcontainer footer .back {
+  background: #86bbae;
+  transition: 0.2s all ease-in-out;
+}
+.rightcontainer footer .back:hover {
+  background: #171a2b;
+  color: white;
+}
+.rightcontainer footer .next {
+  background: #2a7786;
+  border: 1px solid transparent;
+  color: #86bbae;
+}
+.rightcontainer footer .next:hover {
+  background: #171a2b;
+}
+.charname label,
+.charspecies label,
+.charbirthday label,
+.charstatus label,
+.charspayedneutered label,
+.chargender label {
+  display: block;
+  margin-bottom: 5px;
+}
+.radiocontainer {
+  background: #86bbae;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 2px;
+}
+.radiocontainer label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: 0.2s all ease-in-out;
+  width: 100px;
+}
+.radiocontainer input[type="radio"] {
+  display: none;
+}
+.radiocontainer input[type="radio"]:checked + label {
+  background: #61823f;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.selectcontainer {
+  background: #86bbae;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 2px;
+  width: 250px;
+}
